@@ -1,0 +1,157 @@
+:root {
+   --hover-opacity: 0.9;
+}
+
+* {
+   line-height: 1.7;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   background: #780206;
+   /* fallback for old browsers */
+   background: -webkit-linear-gradient(to top, #061161, #780206);
+   /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to top, #061161, #780206);
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.grid-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   grid-gap: 40px;
+   padding: 20px;
+   margin-bottom: 10px;
+}
+
+.grid-card {
+   display: grid;
+   position: relative;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 20px;
+   height: 100%;
+   background: rgba(255, 255, 255, 0.85);
+   padding: 10px;
+   text-align: center;
+   cursor: pointer;
+   overflow: hidden;
+}
+
+.close {
+   display: none;
+}
+
+.grid-card.modal {
+   position: fixed;
+   width: 100%;
+   height: 100vh;
+   padding: 0;
+   margin-top: -20px;
+   margin-left: -20px;
+   z-index: 2;
+   grid-template-columns: 30% 30%;
+   justify-content: center;
+   align-items: center;
+   background: rgba(255, 255, 255, 0.95);
+}
+
+.grid-card.modal > * {
+   height: calc(100vh - 50%);
+}
+
+.grid-card.modal .close {
+   display: flex;
+   position: absolute;
+   height: 20px;
+   padding: 15px 30px !important;
+   line-height: 0;
+   top: 10%;
+   right: 20%;
+   margin-left: auto;
+   margin-right: auto;
+   cursor: pointer;
+   background: maroon;
+   color: white;
+   border: none;
+   border-radius: 5px;
+}
+
+.grid-card.modal .shadow, .grid-card.modal .shadow button {
+   transition: none;
+}
+
+.grid-card.modal .close:hover {
+   opacity: 0.8;
+}
+
+.grid-card.modal .close:active {
+   transform: scale(0.95);
+}
+.card-image {
+   display: grid;
+   padding: 0;
+   margin: 0;
+   justify-items: center;
+   align-items: center;
+}
+
+.grid-card img {
+   width: 100%;
+   height: calc(100% - 5%);
+}
+
+.card-text {
+   color: maroon;
+   display: flex;
+   flex-direction: column;
+   margin-top: 40%;
+}
+
+.shadow {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   background: #ADA996;
+   /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, rgba(234, 234, 234, var(--hover-opacity)), rgba(219, 219, 219, var(--hover-opacity)), rgba(242, 242, 242, 0.8), rgba(173, 169, 150, var(--hover-opacity)));
+   /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, rgba(234, 234, 234, var(--hover-opacity)), rgba(219, 219, 219, var(--hover-opacity)), rgba(242, 242, 242, 0.8), rgba(173, 169, 150, var(--hover-opacity)));
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   display: grid;
+   justify-items: end;
+   align-items: end;
+   transform: translateX(100%);
+   transition: 0.5s all;  
+}
+
+.grid-card:hover .shadow {
+   transform: translateX(0);
+}
+
+.modal:hover .shadow {
+   transform: translateX(100%);
+}
+
+.grid-card .shadow:hover {
+   cursor: auto;
+}
+
+.shadow button {
+   padding: 10px 40px;
+   margin: 0 10% 20% 0;
+   background: rgb(128, 0, 0);
+   color: white;
+   border: none;
+   cursor: pointer;
+   border-radius: 10px;
+   transition: 0.2s all;
+}
+
+.shadow button:hover {
+   background: rgba(128, 0, 0, 0.8);
+}
+
+.shadow button:active {
+   transform: scale(0.98);
+}
