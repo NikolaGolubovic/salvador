@@ -1,3 +1,1 @@
-# salvador
-
-Grid based, + modal, +slider effect for some of Salvador Dali works.
+https://salvador-gallery.surge.sh/
